@@ -11,10 +11,13 @@ export default function Update(props) {
         return (
             props.coinList.map((e) => {
                 return (
-                    <tr>
+                    
+                    <tr >
                         <td>{e.name}</td>
+                        
                         <td>{e.val}</td>
-                    </tr>)
+                    </tr>
+                )
             })
         )
     }
@@ -44,11 +47,11 @@ export default function Update(props) {
 
 
 
-
+//----------------------------------------------------
     return (
         <div className="App">
-            <h1>Update</h1>
-            <table>
+            <h1 className="headTitle">Update</h1>
+            <table className="excListDiv">
                 <tr>
                     <th>Type</th>
                     <th>Value</th>
@@ -57,10 +60,10 @@ export default function Update(props) {
             </table>
 
             <br />
-            <p>Type</p>
+            <h4 className="headTitle">Coin Type</h4>
             <br />
             <input id="typInp" type="text" placeholder="enter type" onChange={(e) => { setTheNewType(e.target.value) }} />
-            <p>New Value</p>
+            <h4 className="headTitle">New Value</h4>
             <input id="valInp" type="text" placeholder="enter value" onChange={(e) => { setTheNewVal(e.target.value) }} />
             <br />
             <br />

@@ -1,5 +1,10 @@
 .App {
+  padding: 5%;
+  height: 600px;
+  width: 100%;
+  background-attachment: fixed;
   text-align: center;
+  background-color: rgb(218, 217, 224);
 }
 
 .App-logo {

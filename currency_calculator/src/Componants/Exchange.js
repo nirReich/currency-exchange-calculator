@@ -11,7 +11,7 @@ export default function Exchange(props) {
     const [amount, setAmount] = useState('');
 
 
-    const coinListSelect = () => {
+    const coinListSelect = () => {// dropdown list of coins
         return props.coinList.map((e,index) => { return <option key={index} value={e.name}>{e.name}</option> })
     }
 
@@ -35,29 +35,29 @@ export default function Exchange(props) {
 
     return (
         <div>
-            <h1>Exchange</h1>
-            <p>from:</p>
+            <h1 className="headTitle">Exchange App</h1>
+            <br/>
+            <p className="headTitle">from:</p>
             <select name="fromCoin" id="fromCoin" onChange={(e) => { setFromCoin(e.target.value) }}>
                 <option value="">Select Currency</option>
                 {coinListSelect()}
             </select>
             <input type="number" id="startExBtn" onChange={(e) => { setAmount(e.target.value) }} />
             <br />
-            <p>to:</p>
+            <p className="headTitle">to:</p>
             <select name="toCoin" id="toCoin" onChange={(e) => { setToCoin(e.target.value) }}>
                 <option value="">Select Currency</option>
                 {coinListSelect()}
             </select>
             <br />
             <br />
-            <button disabled={(fromCoin === '' || toCoin === '') ? true : false} onClick={() => { makeExchange(fromCoin, toCoin, amount) }} >Start</button>
-            <Button variant="success">Success</Button>
+            <Button variant="success" disabled={(fromCoin === '' || toCoin === '') ? true : false} onClick={() => { makeExchange(fromCoin, toCoin, amount) }} ><h3>=</h3></Button>
             <br />
             <br />
 
-            <Link to={'/update'}> <button>Update</button> </Link>
-            <a href="http://www.facebook.com"><button>Share on FaceBook</button></a>
-            <button onClick={() => { props.setTheFlag() }}>View Your Exchange List</button>
+            <Link to={'/update'}><Button variant="warning">Update</Button>{' '}</Link>
+            <a href="http://www.facebook.com"><Button variant="primary">Share on FaceBook</Button>{' '}</a>
+            <Button variant="warning" onClick={() => { props.setTheFlag() }}>View Your Exchange List</Button>{' '}
         </div>
     )
 }
